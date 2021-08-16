@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "business_summary": "01st Quarter",
+      "premium": "9834534",
+      "gross": "320,800",
+      "net_premium": "19834534",
+      "brokerage": "22,543,987"
+    },
+    {
+      "id": "2",
+      "business_summary": "02nd Quarter",
+      "premium": "98756324",
+      "gross": "323450",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "3",
+      "business_summary": "03rd Quarter",
+      "premium": "98756324",
+      "gross": "323450",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "4",
+      "business_summary": "04th Quarter",
+      "premium": "98756312",
+      "gross": "323481",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "5",
+      "business_summary": "05th Quarter",
+      "premium": "98756324",
+      "gross": "32334250",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "6",
+      "business_summary": "06th Quarter",
+      "premium": "93452331",
+      "gross": "32345324",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "7",
+      "business_summary": "07th Quarter",
+      "premium": "98756324",
+      "gross": "323450",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "8",
+      "business_summary": "08th Quarter",
+      "premium": "98734524",
+      "gross": "323450",
+      "net_premium": "198432354",
+      "brokerage": "22,545,443"
+    },
+    {
+      "id": "9",
+      "business_summary": "09th Quarter",
+      "premium": "98756324",
+      "gross": "32334250",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    }, {
+      "id": "10",
+      "business_summary": "10th Quarter",
+      "premium": "93452331",
+      "gross": "32345324",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    }, {
+      "id": "11",
+      "business_summary": "11th Quarter",
+      "premium": "98756324",
+      "gross": "323450",
+      "net_premium": "19865434",
+      "brokerage": "22,545,443"
+    }, {
+      "id": "12",
+      "business_summary": "12th Quarter",
+      "premium": "98734524",
+      "gross": "323450",
+      "net_premium": "198432354",
+      "brokerage": "22,545,443"
+    }
+  ]
+}

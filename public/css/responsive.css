@@ -1,0 +1,56 @@
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .sortable thead tr th {
+    background: none;
+  }
+  #example1_length {
+    text-align: left;
+  }
+
+  #example1_filter {
+    text-align: left;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .delivered {
+    padding: 5px 2px;
+    font-size: 8px;
+  }
+  .rv {
+    padding: 6px 1px;
+    font-size: 7px;
+  }
+
+  .in {
+    font-size: 15px;
+  }
+  .delete_police {
+    background: #3c8dbc;
+    color: #fff;
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+  div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+    text-align: left!important;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+
+.main-tab-item{
+  padding: 2px;
+  max-height: 45px;
+}  
+
+.tab-images {
+  max-height: 25px;
+}
+
+.option-group-home .text-center{
+  margin-bottom: 0;
+  font-size: 9px;
+}
+
+}

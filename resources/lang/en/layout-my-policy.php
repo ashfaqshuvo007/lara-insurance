@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'my_policies' => 'My Policies',
+    'no_record_found' => 'No records found',
+    'type_of_insurance' => 'Type Of Insurance',
+    'status' => 'Status',
+    'inactive' => 'Inactive',
+    'active' => 'Active',
+    'start' => 'Start',
+    'expiry' => 'Expiry',
+    'show_expired_policy' => 'Show expired policy',
+    'policy_details' => 'Policy Details',
+    'select_policy' => 'Select a policy on the left to view details',
+    'offer1' => 'Offer 1',
+    'no_offer_available' => 'No offers avalable for this policy',
+    'coverage' => 'Coverage',
+    'terms_and_condition' => 'Terms and Condition',
+    'paid' => 'Paid',
+    'object' => 'Object',
+    'start_date' => 'Start Date',
+    'end_date' => 'End Date',
+    'policy_no' => 'Policy Number',
+    'object' => 'Object',
+    'offer_1' => 'Offer 1',
+    'expired' => 'Expired',
+    'driver_name' => 'Driver Name',
+    'active_inactive_policy' => 'Active / Inactive policy',
+    'car_insurance' => 'Car Insurance',
+];
+ 

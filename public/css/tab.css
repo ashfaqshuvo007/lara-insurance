@@ -1,0 +1,43 @@
+#ceo th,
+#ceo td {
+  padding: 10px 30px;
+}
+
+#ceo th {
+  background: #cde2f5;
+  color: #000;
+}
+
+#ceo th.asc:after {
+  display: inline;
+  content: '↓';
+}
+
+#ceo th.desc:after {
+  display: inline;
+  content: '↑';
+}
+
+#ceo td {
+ 
+}
+
+#ceo2 th,
+#ceo2 td {
+  padding: 10px 30px;
+}
+
+#ceo2 th {
+  background: #cde2f5;
+  color: #000;
+}
+
+#ceo2 th.asc:after {
+  display: inline;
+  content: '↓';
+}
+
+#ceo2 th.desc:after {
+  display: inline;
+  content: '↑';
+}

@@ -1,0 +1,2620 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "MYSIG API",
+        "description": "MYSIG API for Frontend",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "paths": {
+        "/api/claim/car-policy": {
+            "post": {
+                "tags": [
+                    "Claim"
+                ],
+                "summary": "ClaimForCar",
+                "description": "Show Car Claim API",
+                "operationId": "ClaimsForCar",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "incident_date": {
+                                        "type": "string"
+                                    },
+                                    "incident_location": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    },
+                                    "incident_description": {
+                                        "type": "string"
+                                    },
+                                    "insurer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "image_1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image_2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image_3": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image_4": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/claim/get-claim-policy": {
+            "get": {
+                "tags": [
+                    "Claim"
+                ],
+                "summary": "UserClaimPolicyList",
+                "description": "UserClaimPolicyList",
+                "operationId": "UserClaimPolicyList",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/claim/home-policy": {
+            "post": {
+                "tags": [
+                    "Claim"
+                ],
+                "summary": "ClaimForHome",
+                "description": "Show Home Claim API",
+                "operationId": "ClaimsForHome",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "incident_date": {
+                                        "type": "string"
+                                    },
+                                    "incident_time": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    },
+                                    "claim_event_that_cause_the_damage": {
+                                        "type": "string"
+                                    },
+                                    "object_destroyed": {
+                                        "type": "string"
+                                    },
+                                    "place_where_the_damage_occured": {
+                                        "type": "string"
+                                    },
+                                    "name_address": {
+                                        "type": "string"
+                                    },
+                                    "insured_objects_altered": {
+                                        "type": "bool"
+                                    },
+                                    "describe_shortly": {
+                                        "type": "string"
+                                    },
+                                    "did_the_alarm_work": {
+                                        "type": "string"
+                                    },
+                                    "measure_taken_to_minimize_damage": {
+                                        "type": "string"
+                                    },
+                                    "insurer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "description_of_claim_event": {
+                                        "type": "string"
+                                    },
+                                    "repair_cost_building": {
+                                        "type": "integer"
+                                    },
+                                    "repair_cost_equipments": {
+                                        "type": "integer"
+                                    },
+                                    "total_indemnification_pretended": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/general-condition": {
+            "post": {
+                "tags": [
+                    "Condition"
+                ],
+                "summary": " get general condition",
+                "description": "show one Car API",
+                "operationId": "GeneralCondition",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/payment-method": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "add payment method",
+                "description": "Store Payment Method API",
+                "operationId": "paymentMethod",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/paypal-details-save": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "save paypal details",
+                "description": "Store Paypal Details API",
+                "operationId": "paypalDetails",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_id": {
+                                        "type": "string"
+                                    },
+                                    "paypal_intent": {
+                                        "type": "string"
+                                    },
+                                    "paypal_status": {
+                                        "type": "string"
+                                    },
+                                    "payer_id": {
+                                        "type": "string"
+                                    },
+                                    "payer_email": {
+                                        "type": "string"
+                                    },
+                                    "payer_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/cod-details-save": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "COD details save",
+                "description": "Store Cod Details Save",
+                "operationId": "coddetailssave",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "policy_id": {
+                                        "type": "string"
+                                    },
+                                    "amount": {
+                                        "type": "string"
+                                    },
+                                    "notes": {
+                                        "type": "string"
+                                    },
+                                    "date_range": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/bkt/cardForm": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "BKT Card Form For Mobile APP Except TPL(For LEK currency)",
+                "description": "BKT Payment API Except TPL",
+                "operationId": "cardDetailsFormForBKTAPI",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/bkt/cardForm/tpl": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "BKT Card Form For Mobile APP For TPL(For ALL currency)",
+                "description": "BKT Payment API For TPL",
+                "operationId": "cardDetailsFormForBKTTPLForAPI",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/easy-payment-gateway": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Payment",
+                "description": "Easy Payment Gateway API",
+                "operationId": "Payment",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "amount": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/post-update-transaction-details": {
+            "post": {
+                "tags": [
+                    "Payment"
+                ],
+                "summary": "Payment Transaction Save",
+                "description": "Easy Payment Gateway API",
+                "operationId": "Payment",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "order_id": {
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "type": "bool"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buy-policy/home-policy-save": {
+            "post": {
+                "tags": [
+                    "PolicyCreate"
+                ],
+                "summary": "HomePolicy",
+                "description": "Home Policy Create API",
+                "operationId": "postSaveHomePolicy",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "prospect_name": {
+                                        "type": "string"
+                                    },
+                                    "square": {
+                                        "type": "string"
+                                    },
+                                    "id_number": {
+                                        "type": "string"
+                                    },
+                                    "property_number": {
+                                        "type": "string"
+                                    },
+                                    "full_address": {
+                                        "type": "string"
+                                    },
+                                    "kadastral_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_details_id": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "policy_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_start_date": {
+                                        "type": "string"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string"
+                                    },
+                                    "inside_image_1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "inside_image_2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "inside_image_3": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image_4": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "outside_image_1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "outside_image_2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "outside_image_3": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "insuer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    },
+                                    "insurer_part": {
+                                        "type": "integer"
+                                    },
+                                    "our_part": {
+                                        "type": "integer"
+                                    },
+                                    "offer": {
+                                        "type": "string"
+                                    },
+                                    "premium": {
+                                        "type": "string"
+                                    },
+                                    "premium_paid": {
+                                        "type": "string"
+                                    },
+                                    "delivery_address": {
+                                        "type": "string"
+                                    },
+                                    "delivery_date": {
+                                        "type": "string"
+                                    },
+                                    "delivery_time": {
+                                        "type": "string"
+                                    },
+                                    "delivery_city": {
+                                        "type": "string"
+                                    },
+                                    "home_type": {
+                                        "type": "string"
+                                    },
+                                    "building_value": {
+                                        "type": "string"
+                                    },
+                                    "equipmennt_price": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buy-policy/travel-policy-save": {
+            "post": {
+                "tags": [
+                    "PolicyCreate"
+                ],
+                "summary": "TravelPolicy",
+                "description": "Travel Policy Buy API",
+                "operationId": "postSaveTravelPolicy",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "start_date": {
+                                        "type": "string"
+                                    },
+                                    "end_date": {
+                                        "type": "string"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string"
+                                    },
+                                    "prospect_name": {
+                                        "type": "string"
+                                    },
+                                    "father_name": {
+                                        "type": "string"
+                                    },
+                                    "passport_number": {
+                                        "type": "string"
+                                    },
+                                    "get_the_days": {
+                                        "type": "string"
+                                    },
+                                    "policy_details_id": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "policy_number": {
+                                        "type": "string"
+                                    },
+                                    "insuer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    },
+                                    "insurer_part": {
+                                        "type": "integer"
+                                    },
+                                    "our_part": {
+                                        "type": "integer"
+                                    },
+                                    "offer": {
+                                        "type": "string"
+                                    },
+                                    "premium": {
+                                        "type": "string"
+                                    },
+                                    "premium_paid": {
+                                        "type": "string"
+                                    },
+                                    "delivery_address": {
+                                        "type": "string"
+                                    },
+                                    "delivery_date": {
+                                        "type": "string"
+                                    },
+                                    "delivery_time": {
+                                        "type": "string"
+                                    },
+                                    "delivery_city": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/policy-list": {
+            "get": {
+                "tags": [
+                    "UserDeatils"
+                ],
+                "summary": "UserPolicyDeatils",
+                "description": "UserDeatails",
+                "operationId": "UserPolicyDeatils",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/expire-policy-list": {
+            "get": {
+                "tags": [
+                    "UserDeatils"
+                ],
+                "summary": "UserExpirePolicyList",
+                "description": "UserExpirePolicyList",
+                "operationId": "UserExpirePolicyList",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/shipping": {
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "shipping add and update",
+                "description": "Shipping add and update API",
+                "operationId": "shipping add and update",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "shipping_id": {
+                                        "type": "string"
+                                    },
+                                    "surname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "national_id": {
+                                        "type": "string"
+                                    },
+                                    "company_name": {
+                                        "type": "string"
+                                    },
+                                    "tax_office": {
+                                        "type": "string"
+                                    },
+                                    "tax_no": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "town": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    },
+                                    "zipcode": {
+                                        "type": "string"
+                                    },
+                                    "shipping_country": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/get/shippings": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "shippings",
+                "description": "user shipping API",
+                "operationId": "shippings",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": " Login",
+                "description": "Login API",
+                "operationId": "authenticate",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email_phone": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Registration",
+                "description": "Returns registration message",
+                "operationId": "register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "country_code": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "integer"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "user_type": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string"
+                                    },
+                                    "is_verified": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/user/update-profile": {
+            "post": {
+                "tags": [
+                    "UserDeatils"
+                ],
+                "summary": "ProfileUpadteApi",
+                "operationId": "UserUpdateProfile",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "country_code": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "integer"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "user_type": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/change-password": {
+            "post": {
+                "tags": [
+                    "UserDeatils"
+                ],
+                "summary": "change password",
+                "operationId": "UserChangePassword",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "old_password": {
+                                        "type": "string"
+                                    },
+                                    "new_password": {
+                                        "type": "string"
+                                    },
+                                    "confirm_password": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/details/{language_type}": {
+            "get": {
+                "tags": [
+                    "UserDeatils"
+                ],
+                "summary": "UserDeatils",
+                "description": "UserDeatails",
+                "operationId": "UserDeatils",
+                "parameters": [
+                    {
+                        "name": "language_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/logout/{language_type}": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout",
+                "description": "Log out API",
+                "operationId": "logoutUser",
+                "parameters": [
+                    {
+                        "name": "language_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user/forgot-password": {
+            "post": {
+                "tags": [
+                    "UserDeatils"
+                ],
+                "summary": "change password",
+                "operationId": "UserForgotPassword",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/otp-send": {
+            "post": {
+                "tags": [
+                    "OTP"
+                ],
+                "summary": " Otp send",
+                "description": "Otp Send API",
+                "operationId": "OTP send",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "country_code": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "integer"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/otp-verified": {
+            "post": {
+                "tags": [
+                    "OTP"
+                ],
+                "summary": "Otp Verified",
+                "description": "Otp get API",
+                "operationId": "OtpVerification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "otp_number": {
+                                        "type": "integer"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/check/car-policy": {
+            "post": {
+                "tags": [
+                    "Check car Policy"
+                ],
+                "summary": "Check Car Policy",
+                "description": "Check car policy Buy API",
+                "operationId": "Check car Policy",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "car_registration_no": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buy-policy/tpl-save": {
+            "post": {
+                "tags": [
+                    "PolicyCreate"
+                ],
+                "summary": "TplPolicy",
+                "description": "Show Tpl Policy Buy API",
+                "operationId": "PostSaveTplpolicy",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "driver_first_name": {
+                                        "type": "string"
+                                    },
+                                    "driver_last_name": {
+                                        "type": "string"
+                                    },
+                                    "prospect_name": {
+                                        "type": "string"
+                                    },
+                                    "add_second_driver": {
+                                        "type": "string"
+                                    },
+                                    "second_driver_first_name": {
+                                        "type": "string"
+                                    },
+                                    "second_driver_last_name": {
+                                        "type": "string"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string"
+                                    },
+                                    "id_card_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_start_date": {
+                                        "type": "string"
+                                    },
+                                    "policy_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_details_id": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "car_hasbeen_insured_before": {
+                                        "type": "string"
+                                    },
+                                    "car_registration_number": {
+                                        "type": "string"
+                                    },
+                                    "document_image_1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "document_image_2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "insuer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    },
+                                    "insurer_part": {
+                                        "type": "integer"
+                                    },
+                                    "our_part": {
+                                        "type": "integer"
+                                    },
+                                    "offer": {
+                                        "type": "string"
+                                    },
+                                    "premium": {
+                                        "type": "string"
+                                    },
+                                    "premium_paid": {
+                                        "type": "string"
+                                    },
+                                    "language": {
+                                        "type": "string"
+                                    },
+                                    "delivery_address": {
+                                        "type": "string"
+                                    },
+                                    "delivery_date": {
+                                        "type": "string"
+                                    },
+                                    "delivery_time": {
+                                        "type": "string"
+                                    },
+                                    "delivery_city": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buy-policy/full-casco-save": {
+            "post": {
+                "tags": [
+                    "PolicyCreate"
+                ],
+                "summary": "CascoPolicy",
+                "description": "Show Full Casco Policy Buy API",
+                "operationId": "PostSaveCascopolicy",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "driver_first_name": {
+                                        "type": "string"
+                                    },
+                                    "driver_last_name": {
+                                        "type": "string"
+                                    },
+                                    "prospect_name": {
+                                        "type": "string"
+                                    },
+                                    "add_second_driver": {
+                                        "type": "string"
+                                    },
+                                    "secoond_driver_first_name": {
+                                        "type": "string"
+                                    },
+                                    "secoond_driver_last_name": {
+                                        "type": "string"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string"
+                                    },
+                                    "id_card_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_start_date": {
+                                        "type": "string"
+                                    },
+                                    "policy_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "policy_details_id": {
+                                        "type": "string"
+                                    },
+                                    "car_registration_number": {
+                                        "type": "string"
+                                    },
+                                    "variant": {
+                                        "type": "string"
+                                    },
+                                    "document_image_1": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "document_image_2": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "document_image_3": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "document_image_4": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "insuer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    },
+                                    "insurer_part": {
+                                        "type": "integer"
+                                    },
+                                    "our_part": {
+                                        "type": "integer"
+                                    },
+                                    "offer": {
+                                        "type": "string"
+                                    },
+                                    "premium": {
+                                        "type": "string"
+                                    },
+                                    "premium_paid": {
+                                        "type": "string"
+                                    },
+                                    "delivery_address": {
+                                        "type": "string"
+                                    },
+                                    "delivery_date": {
+                                        "type": "string"
+                                    },
+                                    "delivery_time": {
+                                        "type": "string"
+                                    },
+                                    "delivery_city": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buy-policy/green-card-save": {
+            "post": {
+                "tags": [
+                    "PolicyCreate"
+                ],
+                "summary": "GreenCardPolicy",
+                "description": "Show Green Card Policy Buy API",
+                "operationId": "PostSaveGreenCardpolicy",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "driver_first_name": {
+                                        "type": "string"
+                                    },
+                                    "driver_last_name": {
+                                        "type": "string"
+                                    },
+                                    "prospect_name": {
+                                        "type": "string"
+                                    },
+                                    "validity_days": {
+                                        "type": "string"
+                                    },
+                                    "add_second_driver": {
+                                        "type": "string"
+                                    },
+                                    "second_driver_first_name": {
+                                        "type": "string"
+                                    },
+                                    "second_driver_last_name": {
+                                        "type": "string"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string"
+                                    },
+                                    "id_card_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_start_date": {
+                                        "type": "string"
+                                    },
+                                    "policy_number": {
+                                        "type": "string"
+                                    },
+                                    "policy_details_id": {
+                                        "type": "string"
+                                    },
+                                    "policy_type": {
+                                        "type": "string"
+                                    },
+                                    "car_registration_number": {
+                                        "type": "string"
+                                    },
+                                    "car_type": {
+                                        "type": "string"
+                                    },
+                                    "insuer_id": {
+                                        "type": "string"
+                                    },
+                                    "insurer_policy_id": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    },
+                                    "insurer_part": {
+                                        "type": "integer"
+                                    },
+                                    "our_part": {
+                                        "type": "integer"
+                                    },
+                                    "offer": {
+                                        "type": "string"
+                                    },
+                                    "premium": {
+                                        "type": "string"
+                                    },
+                                    "premium_paid": {
+                                        "type": "string"
+                                    },
+                                    "delivery_address": {
+                                        "type": "string"
+                                    },
+                                    "delivery_date": {
+                                        "type": "string"
+                                    },
+                                    "delivery_time": {
+                                        "type": "string"
+                                    },
+                                    "delivery_city": {
+                                        "type": "string"
+                                    },
+                                    "policy_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/car/add-car": {
+            "post": {
+                "tags": [
+                    "Car"
+                ],
+                "summary": " add car",
+                "description": "Store Car API",
+                "operationId": "addcar",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "car_registration_number": {
+                                        "type": "string"
+                                    },
+                                    "car_tpye": {
+                                        "type": "string"
+                                    },
+                                    "car_sub_type": {
+                                        "type": "string"
+                                    },
+                                    "car_vin_number": {
+                                        "type": "string"
+                                    },
+                                    "production_year": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/car/showCarlist": {
+            "get": {
+                "tags": [
+                    "Car"
+                ],
+                "summary": "car list",
+                "description": "all car show",
+                "operationId": "allcarlist",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/car/{car_registration_number}": {
+            "get": {
+                "tags": [
+                    "Car"
+                ],
+                "summary": " get  one car Information",
+                "description": "show one Car API",
+                "operationId": "editcar",
+                "parameters": [
+                    {
+                        "name": "car_registration_number",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Car"
+                ],
+                "summary": "Update existing Car",
+                "operationId": "updateCar",
+                "parameters": [
+                    {
+                        "name": "car_registration_number",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "car_registration_number": {
+                                        "type": "string"
+                                    },
+                                    "car_tpye": {
+                                        "type": "string"
+                                    },
+                                    "car_sub_type": {
+                                        "type": "string"
+                                    },
+                                    "production_year": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Car"
+                ],
+                "summary": " Delete existing Car",
+                "description": "Delete one Car API",
+                "operationId": "deletecar",
+                "parameters": [
+                    {
+                        "name": "car_registration_number",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/showFullCasco": {
+            "post": {
+                "tags": [
+                    "FullCasco"
+                ],
+                "summary": "showFullCasco",
+                "description": "Full casco API",
+                "operationId": "showFullCasco",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "car_registration_no": {
+                                        "type": "string"
+                                    },
+                                    "car_value": {
+                                        "type": "string"
+                                    },
+                                    "production_year": {
+                                        "type": "string"
+                                    },
+                                    "varient_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/get-full-casco-sub-type": {
+            "get": {
+                "tags": [
+                    "FullCasco"
+                ],
+                "summary": "Full casco type list",
+                "description": "Full Casco Type List",
+                "operationId": "fullcascosubType",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/green-card": {
+            "post": {
+                "tags": [
+                    "Green Card"
+                ],
+                "summary": "shiwGreenCardList",
+                "description": "Show Green Card list API",
+                "operationId": "ShowGreenCardList",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "select_car": {
+                                        "type": "string"
+                                    },
+                                    "other_car": {
+                                        "type": "string"
+                                    },
+                                    "green_card_type": {
+                                        "type": "string"
+                                    },
+                                    "green_card_sub_type": {
+                                        "type": "string"
+                                    },
+                                    "for_how_many_days": {
+                                        "type": "string"
+                                    },
+                                    "car_registration_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/green-card-type/{language_type}": {
+            "get": {
+                "tags": [
+                    "Green Card"
+                ],
+                "summary": "Green Card type list",
+                "description": "Green Card Type List",
+                "operationId": "greenCardType",
+                "parameters": [
+                    {
+                        "name": "language_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/green-card-sub-type": {
+            "post": {
+                "tags": [
+                    "Green Card"
+                ],
+                "summary": "Green Card Sub type list",
+                "description": "Green Card Sub Type List",
+                "operationId": "greenSubCardType",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "green_card_type_id": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/showHomeList": {
+            "post": {
+                "tags": [
+                    "Policy"
+                ],
+                "summary": " showHomeList",
+                "description": "Show Home list API",
+                "operationId": "showHomeList",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "property_type": {
+                                        "type": "string"
+                                    },
+                                    "building_value": {
+                                        "type": "string"
+                                    },
+                                    "equipmennt_price": {
+                                        "type": "string"
+                                    },
+                                    "home_sub_type_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/getHomeSubType/{language_type}": {
+            "get": {
+                "tags": [
+                    "Policy"
+                ],
+                "summary": " showHomeList",
+                "description": "Show Home Sub Type  list API",
+                "operationId": "Home",
+                "parameters": [
+                    {
+                        "name": "language_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/mypolicy-document": {
+            "post": {
+                "tags": [
+                    "Policy Document"
+                ],
+                "summary": "my policy document link",
+                "description": "my policy document link",
+                "operationId": "policydocument",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "company_details": {
+                                        "type": "string"
+                                    },
+                                    "policy_name": {
+                                        "type": "string"
+                                    },
+                                    "policy_type_name": {
+                                        "type": "string"
+                                    },
+                                    "policy_number": {
+                                        "type": "string"
+                                    },
+                                    "start_date": {
+                                        "type": "string"
+                                    },
+                                    "end_date": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/tpl-type/{language_type}": {
+            "get": {
+                "tags": [
+                    "Tpl"
+                ],
+                "summary": "TplType",
+                "description": "Tpl Type API",
+                "operationId": "TplDetails",
+                "parameters": [
+                    {
+                        "name": "language_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/tpl-sub-type": {
+            "post": {
+                "tags": [
+                    "Tpl"
+                ],
+                "summary": "TplSubtype",
+                "description": "Tpl Sub Type API",
+                "operationId": "TplDetails",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tpl_type_id": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/tpl": {
+            "post": {
+                "tags": [
+                    "Tpl"
+                ],
+                "summary": "TPLList",
+                "description": "Tpl API",
+                "operationId": "TplDetails",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "registration_no": {
+                                        "type": "string"
+                                    },
+                                    "tpl_type_id": {
+                                        "type": "string"
+                                    },
+                                    "tpl_sub_type_id": {
+                                        "type": "string"
+                                    },
+                                    "production_year": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/showTravelSubid/{language_type}": {
+            "get": {
+                "tags": [
+                    "Travel"
+                ],
+                "summary": " showTravelSubid",
+                "description": "Show Home list API",
+                "operationId": "showTravelSubid",
+                "parameters": [
+                    {
+                        "name": "language_type",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/showTravelZone": {
+            "post": {
+                "tags": [
+                    "Travel"
+                ],
+                "summary": " showTravelZone",
+                "description": "Show travel list API",
+                "operationId": "showTravelZone",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "country_type_id": {
+                                        "type": "string"
+                                    },
+                                    "language_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/policy/showTravelList": {
+            "post": {
+                "tags": [
+                    "Travel"
+                ],
+                "summary": " ShowTravelList",
+                "description": "Show travel list API",
+                "operationId": "ShowTravelList",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "choose_contury_type": {
+                                        "type": "string"
+                                    },
+                                    "for_age": {
+                                        "type": "string"
+                                    },
+                                    "for_zone": {
+                                        "type": "string"
+                                    },
+                                    "for_validity": {
+                                        "type": "string"
+                                    },
+                                    "start_date": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "JWT bearer",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Frontend Link",
+        "url": "http://111.93.175.214/mysig-server/public"
+    }
+}

@@ -1,0 +1,48 @@
+<?php	
+function startEasypay($orderId, $value, $code, $button_id )
+{
+	$url = "https://login.easypay.al/payments/apis/start";
+	$data = "button_id=$button_id&order_id=$orderId&value=$value&code=$code";
+	
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+						'Content-length: '.strlen($data),
+						'Referer: ' . $_SERVER['SERVER_NAME']
+		));
+	$r = curl_exec($ch);
+	curl_close($ch);	
+	return json_decode($r);
+}
+		
+function validateIPN()
+{
+	$valid=false;
+
+	if(count($_POST)==0){return $valid;}
+	$req = '_type=EP';
+	foreach ($_POST as $key => $value)
+	{
+		$req .= "&" . $key . "=" . $value;
+	}
+
+	$url = "https://login.easypay.al/payments/apis/validate";
+
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+						'Content-length: '.strlen($req),
+						'Referer: ' . $_SERVER['SERVER_NAME']
+		));
+	$r = curl_exec($ch);
+	curl_close($ch);	
+	if (strpos($r, "VERIFIED")!==false){
+		$valid = true;
+	}
+	return $valid;
+}
+?>
